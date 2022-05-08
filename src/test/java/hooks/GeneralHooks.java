@@ -1,20 +1,31 @@
 package hooks;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.testng.annotations.BeforeMethod;
+import page.LoginPage;
+import page.MoviePage;
+import page.SideBar;
 
 import java.io.UnsupportedEncodingException;
 
 public class GeneralHooks {
-    public static Scenario scenario;
-//    ExtentReports extentReports = new ExtentReports();
 
-    @Before
-    public void retornarScenario(Scenario _scenario) throws UnsupportedEncodingException{
-        scenario = _scenario;
-//        extentReports.setGherkinDialect("pt");
+    protected static LoginPage login;
+    protected static SideBar side;
+    protected static MoviePage movie;
+
+    @BeforeMethod
+    public void start(){
+        Configuration.browser = "chrome";
+        Configuration.baseUrl = "http://ninjaplus-web:5000";
+
+        login = new LoginPage();
+        side = new SideBar();
+        movie = new MoviePage();
     }
 
     @After

@@ -1,20 +1,14 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import io.cucumber.java.Before;
-import org.testng.Assert;
-import org.testng.annotations.*;
-import page.LoginPage;
-import page.SideBar;
+import hooks.GeneralHooks;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.isChrome;
 
-public class LoginTests {
+
+public class LoginTests extends GeneralHooks {
 
     @DataProvider(name = "login-alerts")
     public Object[][] loginProvider() {
@@ -25,24 +19,12 @@ public class LoginTests {
                 {"erickaugs@ninjaplus.com", "", "Opps. Cadê a senha?"},
         };
     }
-    protected static LoginPage Login;
-    protected static SideBar side;
-
-    @BeforeMethod
-    public void start(){
-        Configuration.browser = "chrome";
-        Configuration.baseUrl = "http://ninjaplus-web:5000";
-
-        Login = new LoginPage();
-        side = new SideBar();
-    }
 
     @Test
     public void loginSucess() {
-        Login
+        login
                 .open()
-                .with("erickaugs@ninjaplus.com", "pwd123")
-                .alert();
+                .with("erickaugs@ninjaplus.com", "pwd123");
 
                 side.loggerUser().shouldHave(text("erickaugs"));
     }
@@ -50,7 +32,7 @@ public class LoginTests {
     @Test(dataProvider = "login-alerts")
     public void shouldSeeLoginAlerts(String email, String pass, String expectAlert){
 
-        Login
+        login
                 .open()
                 .with(email,pass)
                 .alert().shouldHave(text(expectAlert));
@@ -58,6 +40,6 @@ public class LoginTests {
 
     @AfterMethod
     public void clearUp(){
-        Login.clearSession();
+        login.clearSession();
     }
 }
