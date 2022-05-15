@@ -23,12 +23,6 @@ public class MovieTests extends GeneralHooks {
 
     @Test
     public void registrarNovoFilme(){
-        String title = "Senhor dos Aneis";
-        String status = "Pré-venda";
-        String ano = "2022";
-        String dtLanc = "16/05/2022";
-        List<String> cast = Arrays.asList("Orlando Blum", "Kevin Hart", "Dannyy Glover");
-        String sinopse = "A sociedade do ano ressurge para lutar contra mordor";
 
        MovieModel movieData = new MovieModel(
                "Senhor dos Aneis",
@@ -36,7 +30,8 @@ public class MovieTests extends GeneralHooks {
                2022,
                "16/01/2022",
                Arrays.asList("Orlando Blum", "Kevin Hart", "Dannyy Glover"),
-               "A sociedade do ano ressurge para lutar contra mordor");
+               "A sociedade do ano ressurge para lutar contra mordor",
+               "jumanji2.ppg");
 
         movie.adcFilme().title(movieData);
     }
