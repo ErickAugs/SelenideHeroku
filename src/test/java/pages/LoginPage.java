@@ -18,7 +18,7 @@ public class LoginPage {
     }
 
     public void informarSenha(String senha){
-        campoEmail.setValue(senha);
+        campoSenha.setValue(senha);
     }
 
     public void acessarSeuBarriga(){
