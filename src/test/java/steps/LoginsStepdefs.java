@@ -2,6 +2,10 @@ package steps;
 
 import com.codeborne.selenide.Configuration;
 import io.cucumber.java.pt.Dado;
+import org.checkerframework.checker.units.qual.C;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import pages.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -27,7 +31,9 @@ public class LoginsStepdefs {
         Configuration.baseUrl = "https://seubarriga.wcaquino.me/login";
         Configuration.browser = "chrome";
         Configuration.downloadsFolder = "relatorios";
+
         Configuration.headless = false;
+        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
 
         LoginPage loginPage = open("", LoginPage.class);
         loginPage.informarEmail(prop.getProperty("userName"));
