@@ -72,8 +72,8 @@
         </dependency>
         <dependency>
             <groupId>tech.grasshopper</groupId>
-            <artifactId>extentreports-cucumber6-adapter</artifactId>
-            <version>2.1.0</version>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -93,6 +93,11 @@
             <groupId>io.cucumber</groupId>
             <artifactId>messages</artifactId>
             <version>24.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.18.0</version> <!-- Ou a versão mais recente disponível -->
         </dependency>
 
         <dependency>

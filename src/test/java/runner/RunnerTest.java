@@ -6,10 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"classpath:features"},
-        glue = {"stepDefinition", "steps"},
-        plugin = {"pretty", "json:target/cucumber-report.json"} // Removido o plugin do ExtentReports
+        features = "classpath:features",
+        glue = {"steps"},
+        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        monochrome = true
 )
+
 public class RunnerTest {
 
 }

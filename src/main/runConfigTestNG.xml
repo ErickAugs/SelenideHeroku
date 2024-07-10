@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Cucumber" verbose="1">
+       <test name="Cucumber">
+       <classes>
+       <class name="core.base.qa.cucumber.TestBaseBDD">
+       </class>
+       </classes>
+       </test>
+</suite>
