@@ -31,7 +31,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>7.3.1</version>
+            <version>7.5.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.8.0</version> <!-- Use a versão mais recente disponível -->
+            <version>5.9.2</version> <!-- Use a versão mais recente disponível -->
             <scope>test</scope>
         </dependency>
 
