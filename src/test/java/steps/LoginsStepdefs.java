@@ -30,11 +30,14 @@ public class LoginsStepdefs {
     public void que_esteja_logado_na_pagina_do_seu_barriga() {
         Configuration.baseUrl = "https://seubarriga.wcaquino.me/login";
         Configuration.browser = "chrome";
-        System.setProperty("webdriver.chrome.driver", "D:\\Projetos\\SelenideHeroku\\chromedriver.exe");
+
         Configuration.downloadsFolder = "relatorios";
 
         Configuration.headless = false;
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        //Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+        Configuration.browserCapabilities = chromeOptions;
 
         LoginPage loginPage = open("", LoginPage.class);
         loginPage.informarEmail(prop.getProperty("userName"));
