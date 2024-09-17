@@ -1,14 +1,6 @@
-name: Selenide Tests
-
-# Definindo em quais eventos o workflow será acionado
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
