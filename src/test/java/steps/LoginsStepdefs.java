@@ -35,9 +35,9 @@ public class LoginsStepdefs {
 
         Configuration.headless = false;
         //Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless=new");
-        Configuration.browserCapabilities = chromeOptions;
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--headless=new");
+//        Configuration.browserCapabilities = chromeOptions;
 
         LoginPage loginPage = open("", LoginPage.class);
         loginPage.informarEmail(prop.getProperty("userName"));

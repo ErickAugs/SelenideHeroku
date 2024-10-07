@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.util.List;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -22,7 +23,7 @@ public class ContaPage {
     }
 
     public void selecionarOpcaoMenu(String opcao){
-        menusContas.find(Condition.text(opcao)).click();
+        menusContas.find(text(opcao)).click();
     }
 
     public void incluirConta(String conta){
@@ -35,5 +36,10 @@ public class ContaPage {
 
     public List<String> contasInclusas(){
         return contasIncluidas.texts();
+    }
+
+    public int excluirConta(){
+        int index = contasIncluidas.size();
+        return index;
     }
 }

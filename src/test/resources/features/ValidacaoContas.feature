@@ -12,3 +12,12 @@ Funcionalidade: Adicionar ou excluir conta
     Exemplos:
       | opcaoMenu | conta |
       | Adicionar | teste |
+
+    @excluir-conta-adicionada
+    Esquema do Cenario: Excluir conta adicionada
+    Quando acessar o menu conta - opção <opcaoMenu>
+    Entao deverá encontrar a conta adicionada e excluí-la com sucesso: <conta>
+    E ao pesquisa-la não deverá ser listada em tela: <conta>
+      Exemplos:
+        | opcaoMenu | conta |
+        | Listar    | teste |
