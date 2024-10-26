@@ -1,4 +1,5 @@
 # language: pt
+@todos
 Funcionalidade: Adicionar ou excluir conta
 
   Contexto:

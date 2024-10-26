@@ -2,6 +2,7 @@ package steps;
 
 import com.codeborne.selenide.Configuration;
 import io.cucumber.java.pt.Dado;
+import io.qameta.allure.Step;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,6 +27,7 @@ public class LoginsStepdefs {
         }
     }
 
+    @Step("que esteja logado na pagina do seu barriga")
     @Dado("que esteja logado na pagina do seu barriga")
     public void que_esteja_logado_na_pagina_do_seu_barriga() {
         Configuration.baseUrl = "https://seubarriga.wcaquino.me/login";

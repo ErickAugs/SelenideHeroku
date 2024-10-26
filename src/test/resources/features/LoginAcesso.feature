@@ -1,4 +1,5 @@
 # language: pt
+  @todos
   Funcionalidade: Login de acesso a pagina Seu barriga
 
     Contexto:
